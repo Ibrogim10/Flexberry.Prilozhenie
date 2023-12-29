@@ -68,7 +68,7 @@
               "name": "наименование",
               "caption": "Возрастная группа",
               "hidden": true,
-              "index": 2
+              "index": 4
             }
           ],
           "index": 1,
@@ -76,6 +76,27 @@
           "caption": "Группы возраст",
           "name": "группыВозраст",
           "relatedTo": "i-i-s-prilozhenie-группы-возраст",
+          "inverse": null
+        },
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "Заполнил",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": 2,
+          "type": "default",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-prilozhenie-сотрудники",
           "inverse": null
         }
       ],

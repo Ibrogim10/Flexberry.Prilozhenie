@@ -22,13 +22,13 @@ export default Controller.extend({
             link: 'i-i-s-prilozhenie-спортсмены-l',
             caption: i18n.t('forms.application.sitemap.информация-по-спортсменам.i-i-s-prilozhenie-спортсмены-l.caption'),
             title: i18n.t('forms.application.sitemap.информация-по-спортсменам.i-i-s-prilozhenie-спортсмены-l.title'),
-            icon: 'building',
+            icon: 'chart bar',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-группы-возраст-l',
             caption: i18n.t('forms.application.sitemap.информация-по-спортсменам.i-i-s-prilozhenie-группы-возраст-l.caption'),
             title: i18n.t('forms.application.sitemap.информация-по-спортсменам.i-i-s-prilozhenie-группы-возраст-l.title'),
-            icon: 'file',
+            icon: 'briefcase',
             children: null
           }, {
             link: 'i-i-s-prilozhenie-состав-команды-l',
@@ -46,7 +46,7 @@ export default Controller.extend({
             link: 'i-i-s-prilozhenie-график-матчей-l',
             caption: i18n.t('forms.application.sitemap.графики.i-i-s-prilozhenie-график-матчей-l.caption'),
             title: i18n.t('forms.application.sitemap.графики.i-i-s-prilozhenie-график-матчей-l.title'),
-            icon: 'phone',
+            icon: 'book',
             children: null
           }]
         }, {
@@ -58,7 +58,7 @@ export default Controller.extend({
             link: 'i-i-s-prilozhenie-сотрудники-l',
             caption: i18n.t('forms.application.sitemap.сотрудники.i-i-s-prilozhenie-сотрудники-l.caption'),
             title: i18n.t('forms.application.sitemap.сотрудники.i-i-s-prilozhenie-сотрудники-l.title'),
-            icon: 'address card',
+            icon: 'folder open',
             children: null
           }]
         }

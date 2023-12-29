@@ -52,8 +52,11 @@ export let ValidationRules = {
 export let defineProjections = function (modelClass) {
   modelClass.defineProjection('СоставКомандыE', 'i-i-s-prilozhenie-состав-команды', {
     имяКоманды: attr('Имя команды', { index: 0 }),
+    сотрудники: belongsTo('i-i-s-prilozhenie-сотрудники', 'Сотрудники', {
+      фИО: attr('Заполнил', { index: 3 })
+    }, { index: 2 }),
     группыВозраст: belongsTo('i-i-s-prilozhenie-группы-возраст', 'Группы возраст', {
-      наименование: attr('Возрастная группа', { index: 2, hidden: true })
+      наименование: attr('Возрастная группа', { index: 4, hidden: true })
     }, { index: 1, displayMemberPath: 'наименование' }),
     тЧСоставаСпорт: hasMany('i-i-s-prilozhenie-т-ч-состава-спорт', 'Т ч состава спорт', {
       номерСпортсмена: attr('Номер спортсмена', { index: 0 }),

@@ -1,0 +1,83 @@
+<h3 class="ui header">{{t "forms.i-i-s-prilozhenie-состав-команды-e.caption"}}</h3>
+
+<form class="ui form flexberry-vertical-form" role="form">
+  {{flexberry-error error=error}}
+  <div class="field">
+    <div class="flexberry-edit-panel">
+      {{#unless readonly}}
+        <button class="ui button save-button" {{action "save"}}>
+          {{t "forms.edit-form.save-button-text"}}
+        </button>
+        {{#unless model.isNew}}
+          <button class="ui button save-del-button" {{action "delete"}}>
+            {{t "forms.edit-form.delete-button-text"}}
+          </button>
+        {{/unless}}
+      {{/unless}}
+      <button class="ui button close-button" {{action "close"}}>
+        {{t "forms.edit-form.close-button-text"}}
+      </button>
+    </div>
+  </div>
+  <div class="field flexberry-validationsummary-container">
+    <div class="sixteen wide">
+      {{flexberry-validationsummary errors=(v-get validationObject "messages")}}
+    </div>
+  </div>
+  <div class="field">
+    {{flexberry-field
+      readonly=readonly
+      value=model.имяКоманды
+      class=(if (v-get validationModel "имяКоманды" "isInvalid") "error")
+      label=(t "forms.i-i-s-prilozhenie-состав-команды-e.имяКоманды-caption")
+      data-test-i-i-s-prilozhenie-состав-команды-e-имяКоманды=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "имяКоманды" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-prilozhenie-состав-команды-e.группыВозраст-caption"}}</label>
+    {{flexberry-lookup
+      choose="showLookupDialog"
+      remove="removeLookupValue"
+      value=model.группыВозраст
+      displayAttributeName="наименование"
+      autocomplete=true
+      relationName="группыВозраст"
+      projection="ГруппыВозрастL"
+      title=(t "forms.i-i-s-prilozhenie-состав-команды-e.группыВозраст-caption")
+      readonly=readonly
+      componentName="группыВозрастLookup"
+      class=(if (v-get validationModel "группыВозраст" "isInvalid") "error")
+      data-test-i-i-s-prilozhenie-состав-команды-e-группыВозраст=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "группыВозраст" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-prilozhenie-состав-команды-e.тЧСоставаСпорт-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="тЧСоставаСпортGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.тЧСоставаСпорт
+      content=model.тЧСоставаСпорт
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "тЧСоставаСпорт" "isInvalid") "error")
+      data-test-i-i-s-prilozhenie-состав-команды-e-тЧСоставаСпорт=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "тЧСоставаСпорт" "message")}}
+  </div>
+  <div class="field">
+    <label>{{t "forms.i-i-s-prilozhenie-состав-команды-e.тЧСоставаТренер-caption"}}</label>
+    {{flexberry-groupedit
+      componentName="тЧСоставаТренерGroupEdit"
+      mainModelProjection=modelProjection
+      modelProjection=modelProjection.attributes.тЧСоставаТренер
+      content=model.тЧСоставаТренер
+      readonly=readonly
+      orderable=false
+      class=(if (v-get validationModel "тЧСоставаТренер" "isInvalid") "error")
+      data-test-i-i-s-prilozhenie-состав-команды-e-тЧСоставаТренер=true
+    }}
+    {{flexberry-validationmessage error=(v-get validationModel "тЧСоставаТренер" "message")}}
+  </div>
+</form>

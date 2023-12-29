@@ -1,0 +1,139 @@
+﻿{
+  "name": "IISPrilozhenieСоставКоманды",
+  "modelName": "i-i-s-prilozhenie-состав-команды",
+  "className": "СоставКоманды",
+  "nameSpace": "IIS.Prilozhenie",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "имяКоманды",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "группыВозраст",
+      "relatedTo": "i-i-s-prilozhenie-группы-возраст",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-prilozhenie-сотрудники",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "тЧСоставаСпорт",
+      "relatedTo": "i-i-s-prilozhenie-т-ч-состава-спорт",
+      "inverse": "составКоманды"
+    },
+    {
+      "name": "тЧСоставаТренер",
+      "relatedTo": "i-i-s-prilozhenie-т-ч-состава-тренер",
+      "inverse": "составКоманды"
+    }
+  ],
+  "projections": [
+    {
+      "name": "СоставКомандыE",
+      "modelName": "i-i-s-prilozhenie-состав-команды",
+      "attrs": [
+        {
+          "name": "имяКоманды",
+          "caption": "Имя команды",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Наименование",
+          "lookupValueField": "наименование",
+          "relationName": "ГруппыВозраст",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Возрастная группа",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Группы возраст",
+          "name": "группыВозраст",
+          "relatedTo": "i-i-s-prilozhenie-группы-возраст",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ТЧСоставаСпортE",
+          "caption": "Т ч состава спорт",
+          "name": "тЧСоставаСпорт",
+          "relatedTo": "i-i-s-prilozhenie-т-ч-состава-спорт",
+          "inverse": null
+        },
+        {
+          "projectionName": "ТЧСоставаТренерE",
+          "caption": "Т ч состава тренер",
+          "name": "тЧСоставаТренер",
+          "relatedTo": "i-i-s-prilozhenie-т-ч-состава-тренер",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "СоставКомандыL",
+      "modelName": "i-i-s-prilozhenie-состав-команды",
+      "attrs": [
+        {
+          "name": "имяКоманды",
+          "caption": "Имя команды",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "ГруппыВозраст",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Возрастная группа",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Возрастная группа",
+          "name": "группыВозраст",
+          "relatedTo": "i-i-s-prilozhenie-группы-возраст",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

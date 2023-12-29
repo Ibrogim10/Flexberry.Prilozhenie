@@ -1,0 +1,120 @@
+﻿{
+  "name": "IISPrilozhenieГрафикМатчей",
+  "modelName": "i-i-s-prilozhenie-график-матчей",
+  "className": "ГрафикМатчей",
+  "nameSpace": "IIS.Prilozhenie",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаСоздания",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "Now",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-prilozhenie-сотрудники",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "тЧГрафика",
+      "relatedTo": "i-i-s-prilozhenie-т-ч-графика",
+      "inverse": "графикМатчей"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ГрафикМатчейE",
+      "modelName": "i-i-s-prilozhenie-график-матчей",
+      "attrs": [
+        {
+          "name": "датаСоздания",
+          "caption": "Дата создания",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 2
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-prilozhenie-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ТЧГрафикаE",
+          "caption": "Т ч графика",
+          "name": "тЧГрафика",
+          "relatedTo": "i-i-s-prilozhenie-т-ч-графика",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ГрафикМатчейL",
+      "modelName": "i-i-s-prilozhenie-график-матчей",
+      "attrs": [
+        {
+          "name": "датаСоздания",
+          "caption": "Дата создания",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "Создал",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "Создал",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-prilozhenie-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

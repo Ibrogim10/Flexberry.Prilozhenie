@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-prilozhenie-спортсмены-e",
+  "editForm": "i-i-s-prilozhenie-спортсмены-e",
+  "external": false,
+  "caption": "Спортсмены",
+  "name": "IISPrilozhenieСпортсменыL",
+  "className": "СпортсменыL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-prilozhenie-спортсмены",
+      "modelProjection": "СпортсменыL"
+    }
+  ]
+}

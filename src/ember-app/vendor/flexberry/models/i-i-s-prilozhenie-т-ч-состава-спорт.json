@@ -1,0 +1,83 @@
+﻿{
+  "name": "IISPrilozhenieТЧСоставаСпорт",
+  "modelName": "i-i-s-prilozhenie-т-ч-состава-спорт",
+  "className": "ТЧСоставаСпорт",
+  "nameSpace": "IIS.Prilozhenie",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "номерСпортсмена",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "спортсмены",
+      "relatedTo": "i-i-s-prilozhenie-спортсмены",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "составКоманды",
+      "relatedTo": "i-i-s-prilozhenie-состав-команды",
+      "inverse": "тЧСоставаСпорт"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТЧСоставаСпортE",
+      "modelName": "i-i-s-prilozhenie-т-ч-состава-спорт",
+      "attrs": [
+        {
+          "name": "номерСпортсмена",
+          "caption": "Номер спортсмена",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Спортсмены",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 2
+            },
+            {
+              "name": "датаРождения",
+              "caption": "Дата рождения",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Спортсмены",
+          "name": "спортсмены",
+          "relatedTo": "i-i-s-prilozhenie-спортсмены",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

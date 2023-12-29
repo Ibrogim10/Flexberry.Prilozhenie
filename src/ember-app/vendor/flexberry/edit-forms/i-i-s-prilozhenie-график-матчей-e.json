@@ -1,0 +1,31 @@
+﻿{
+  "propertyLookup": [
+    {
+      "master": null,
+      "displayAttributeName": null,
+      "required": false,
+      "relationName": "Сотрудники",
+      "projection": "СотрудникиL",
+      "detailModelName": null
+    },
+    {
+      "master": "группыВозраст",
+      "displayAttributeName": "наименование",
+      "required": true,
+      "relationName": "ТЧГрафика.ГруппыВозраст",
+      "projection": "ГруппыВозрастL",
+      "detailModelName": "i-i-s-prilozhenie-т-ч-графика"
+    }
+  ],
+  "external": false,
+  "caption": "График матчей",
+  "name": "IISPrilozhenieГрафикМатчейE",
+  "className": "ГрафикМатчейE",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-prilozhenie-график-матчей",
+      "modelProjection": "ГрафикМатчейE"
+    }
+  ]
+}

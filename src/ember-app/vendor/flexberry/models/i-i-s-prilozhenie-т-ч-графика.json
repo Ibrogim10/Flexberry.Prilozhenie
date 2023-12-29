@@ -1,0 +1,107 @@
+﻿{
+  "name": "IISPrilozhenieТЧГрафика",
+  "modelName": "i-i-s-prilozhenie-т-ч-графика",
+  "className": "ТЧГрафика",
+  "nameSpace": "IIS.Prilozhenie",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "время",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "датаПроведения",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "местоПроведения",
+      "type": "string",
+      "flexberryType": "string",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "группыВозраст",
+      "relatedTo": "i-i-s-prilozhenie-группы-возраст",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "графикМатчей",
+      "relatedTo": "i-i-s-prilozhenie-график-матчей",
+      "inverse": "тЧГрафика"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТЧГрафикаE",
+      "modelName": "i-i-s-prilozhenie-т-ч-графика",
+      "attrs": [
+        {
+          "name": "датаПроведения",
+          "caption": "Дата проведения",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "время",
+          "caption": "Время",
+          "hidden": false,
+          "index": 1
+        },
+        {
+          "name": "местоПроведения",
+          "caption": "Место проведения",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "Наименование",
+          "lookupValueField": "наименование",
+          "relationName": "ГруппыВозраст",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "наименование",
+              "caption": "Наименование",
+              "hidden": true,
+              "index": 4
+            }
+          ],
+          "index": 3,
+          "type": "standard",
+          "caption": "Группы возраст",
+          "name": "группыВозраст",
+          "relatedTo": "i-i-s-prilozhenie-группы-возраст",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

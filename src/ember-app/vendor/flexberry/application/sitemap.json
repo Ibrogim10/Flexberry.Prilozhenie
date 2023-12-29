@@ -1,0 +1,66 @@
+﻿{
+  "applicationCaption": "Prilozhenie",
+  "applicationTitle": "Prilozhenie",
+  "items": [
+    {
+      "link": null,
+      "menuName": "информация-по-спортсменам",
+      "caption": "Информация по спортсменам",
+      "title": "Информация по спортсменам",
+      "children": [
+        {
+          "link": "i-i-s-prilozhenie-спортсмены-l",
+          "menuName": null,
+          "caption": "Спортсмены",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-prilozhenie-группы-возраст-l",
+          "menuName": null,
+          "caption": "Группы возраст",
+          "title": "",
+          "children": null
+        },
+        {
+          "link": "i-i-s-prilozhenie-состав-команды-l",
+          "menuName": null,
+          "caption": "Состав команды",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "графики",
+      "caption": "Графики",
+      "title": "Графики",
+      "children": [
+        {
+          "link": "i-i-s-prilozhenie-график-матчей-l",
+          "menuName": null,
+          "caption": "График матчей",
+          "title": "",
+          "children": null
+        }
+      ]
+    },
+    {
+      "link": null,
+      "menuName": "сотрудники",
+      "caption": "Сотрудники",
+      "title": "Сотрудники",
+      "children": [
+        {
+          "link": "i-i-s-prilozhenie-сотрудники-l",
+          "menuName": null,
+          "caption": "Сотрудники",
+          "title": "",
+          "children": null
+        }
+      ]
+    }
+  ],
+  "mobile": true
+}

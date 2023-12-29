@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-prilozhenie-группы-возраст-e",
+  "editForm": "i-i-s-prilozhenie-группы-возраст-e",
+  "external": false,
+  "caption": "Группы возраст",
+  "name": "IISPrilozhenieГруппыВозрастL",
+  "className": "ГруппыВозрастL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-prilozhenie-группы-возраст",
+      "modelProjection": "ГруппыВозрастL"
+    }
+  ]
+}

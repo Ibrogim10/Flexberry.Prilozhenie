@@ -1,0 +1,66 @@
+﻿{
+  "name": "IISPrilozhenieТЧСоставаТренер",
+  "modelName": "i-i-s-prilozhenie-т-ч-состава-тренер",
+  "className": "ТЧСоставаТренер",
+  "nameSpace": "IIS.Prilozhenie",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-prilozhenie-сотрудники",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "составКоманды",
+      "relatedTo": "i-i-s-prilozhenie-состав-команды",
+      "inverse": "тЧСоставаТренер"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ТЧСоставаТренерE",
+      "modelName": "i-i-s-prilozhenie-т-ч-состава-тренер",
+      "attrs": [],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 1
+            },
+            {
+              "name": "должность",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": 0,
+          "type": "standard",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-prilozhenie-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}
